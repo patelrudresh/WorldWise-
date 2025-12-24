@@ -1,0 +1,31 @@
+{
+    "cities":[
+        {
+      "id": 1,
+      "cityName": "Delhi",
+      "countryName": "US",
+      "date": "(OCT 2025)",
+      "position": { "lat": 28.6139, "lng": 77.2090 }
+    },
+    {
+      "id": 2,
+      "cityName": "London",
+      "countryName": "UK",
+      "date": "(JAN 2024)",
+      "position": { "lat": 51.5074, "lng": -0.1278 }
+    },
+         {
+            "id": 3,
+      "cityName": "Indore",
+      "countryName": "India",
+      "date":"(OCT 2025)",
+       "position": { "lat": 60.5074, "lng": -0.5978 }
+
+        },{
+            "id": 4,
+      "cityName": "bengaluru",
+      "countryName": "kanada",
+       "date":"(FEB 2021)"
+        }
+    ]
+}

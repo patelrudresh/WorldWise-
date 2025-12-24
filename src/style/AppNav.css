@@ -1,0 +1,29 @@
+.appnav {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.nav-btn {
+  flex: 1;
+  text-align: center;
+  padding: 5px 0;
+ 
+  border-radius: 8px;
+  background: #c12000;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+}
+
+
+.nav-btn.active {
+  background: #3a3f6b;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+}
+.nav-btn:hover {
+  background: #3a3f6b;
+}

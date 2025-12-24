@@ -1,0 +1,84 @@
+/* ===== Navbar ===== */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: rgba(89, 98, 98, 0.892);
+  width: 100%;
+  height: 70px;
+  padding: 0 2rem;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 1000; /* ✅ slash removed */
+}
+
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  list-style: none;
+  text-decoration: none;
+
+}
+
+.logo-box img {
+  height: 40px;
+  width: auto;
+
+}
+
+.logo-box span {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: bold;
+
+}
+
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+
+.nav ul li a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+
+.nav ul li a.active {
+  /* border-bottom: 2px solid white; */
+  color: rgb(59, 10, 183);
+}
+
+.nav ul li a:hover {
+  color: #1d0aac;
+}
+
+.page {
+  margin: 80px;
+  padding: 1rem;
+}
+
+
+.navlogin {
+
+  background-color: rgb(71, 231, 17);
+  color: aliceblue;
+  border-radius: 6%;
+  padding: 7px 14px;
+  align-items: center;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
