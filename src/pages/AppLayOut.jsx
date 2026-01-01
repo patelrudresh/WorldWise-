@@ -7,11 +7,11 @@ import "../style/AppLayout.css"
 function AppLayOut() {
   return (
     <main className="App-layout">
-    <div className="app-layout">
-      <SideBar /> </div>
-      <div> <Map/></div>
+
+      <SideBar />
     
-   
+      <Map />
+
     </main>
   );
 }

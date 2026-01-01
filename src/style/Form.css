@@ -1,4 +1,4 @@
-/* .page{
+.page{
     justify-content: center;
     display: flex;
     /* min-height: 100vh; */
@@ -41,4 +41,4 @@
   
 }.login-btn:hover {
   background: #4338ca;
-} */
+}

@@ -1,23 +1,23 @@
+import { useCities } from "../contexts/CitiesContext";
 import CountryItem from "./CountryItem";
 
-function CountryList({ cities, isLoading }) {
+function CountryList() {
+  const { cities, isLoading } = useCities();
+
   if (isLoading) return <h1>Loading...</h1>;
   if (!cities.length) return <p>Please add more country</p>;
 
-  const countries = cities.reduce((arr, city) => {
-    if (!arr.some((e) => e.countryName === city.countryName)) {
-      return [...arr, { countryName: city.countryName }];
-    }
-    return arr;
-  }, []);
+  // ✅ unique country list
+  const countries = [
+    ...new Set(cities.map(city => city.country))
+  ];
 
   return (
     <ul>
-      {countries.map((country) => (
-        <CountryItem
-          key={country.countryName}
-          country={country}
-        />
+      {countries.map(country => (
+        <li key={country}>   {/* ✅ key on LI */}
+          <CountryItem country={country} />
+        </li>
       ))}
     </ul>
   );

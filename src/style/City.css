@@ -1,0 +1,76 @@
+.city-page {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.city-card {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(175, 171, 163, 0.992);
+  border-radius: 16px;
+  color: #181191 ;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.city-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.city-header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.country {
+  background: #eef2ff;
+  color: #3730a3;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.city-info {
+  margin-bottom: 24px;
+}
+
+.label {
+  font-size: 13px;
+  color: #888c93;
+  margin-bottom: 4px;
+}
+
+.value {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.notes {
+  background: #d0d4d7;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.btn-back {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #4f46e5;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-back:hover {
+  background: #4338ca;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 40px;
+}

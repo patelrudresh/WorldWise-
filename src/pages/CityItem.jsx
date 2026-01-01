@@ -1,27 +1,48 @@
 import { Link } from "react-router-dom";
-import "../style/CityItem.css"
-function CityItem({city}) {
+import "../style/CityItem.css";
+import { useCities } from "../contexts/CitiesContext";
 
-   const {cityName,date ,id,position}=city;
-    console.log(position)
-    const { lat, lng } = position || {};
-     console.log(city)
-  return (
 
-   <li className="city-row-li " >
+export function formatDate(date) {
+  if (!date) return "";
 
-  <Link
-        className="city-row"
-        to={`${id}?lat=${lat}&lng=${lng}`}
-      > <span className="city-name">{cityName}</span>
-
-      <div className="city-right">
-        <span className="city-date">{date}</span>
-        <button className="city-remove">&times;</button>
-      </div>
-     </Link>
-    </li> 
-  )
+  const onlyDate = date.split("T")[0]; // remove time
+  return new Intl.DateTimeFormat("en", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(new Date(onlyDate));
 }
 
-export default CityItem
+function CityItem({ city }) {
+  const { currentCity ,deleteCity} = useCities();
+  
+
+  const { cityName, date, id, position } = city;
+  const { lat, lng } = position || {};
+
+  const isActive = currentCity?.id === id;
+
+  function handleClick(e){
+    e.preventDefault();
+      deleteCity(id)
+  }
+
+  return (
+    <li className={`city-row-li ${isActive ? "cityItem-active" : ""}`}>
+      <Link to={`${id}?lat=${lat}&lng=${lng}`}>
+        <span className="city-name">{cityName}</span>
+
+        <div className="city-right">
+          <span className="city-date"> {formatDate(date)}</span>
+          <button className="city-remove"
+              onClick={handleClick}
+          >&times;</button>
+        </div>
+      </Link>
+    </li>
+  );
+}
+
+export default CityItem;
+ 
