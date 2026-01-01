@@ -1,12 +1,16 @@
 .sidebar {
     display: flex;
-    width: 380px;
+    /* width: 50%; */
     height: 100vh;
     background-color: rgb(78, 74, 81);
     color: white;
     flex-direction: column;
 
     padding: 1.5rem;
+  z-index: 1000;
+   width: 40%;
+  overflow-x: hidden;
+
 
 }
 .sidebar-header {

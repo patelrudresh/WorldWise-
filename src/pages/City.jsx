@@ -1,38 +1,59 @@
-import { useParams, useSearchParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useCities } from "../contexts/CitiesContext";
+import { useEffect } from "react";
+import "../style/City.css";
 
-const formatDate = (date) => {
+function formatDate(date) {
+  if (!date) return "";
+   const onlyDate = date.split("T")[0];
   return new Intl.DateTimeFormat("en", {
     day: "numeric",
     month: "long",
     year: "numeric",
-  }).format(new Date(date));
-};
+  }).format(new Date(onlyDate));
+}
 
 function City() {
+  const navigate = useNavigate();
   const { id } = useParams();
-  const [searchParam] = useSearchParams();
+  const { getCity, currentCity, isLoading } = useCities();
 
-  const lat = searchParam.get("lat");
-  const lng = searchParam.get("lng");
+  useEffect(() => {
+    getCity(id);
+  }, [id]);
 
-  console.log(id);
+  if (isLoading) return <p className="loading">Loading...</p>;
+  if (!currentCity) return <p>No city found</p>;
 
-  const currentCity = {
-    cityName: "Lisbon",
-    date: "2027-10-04",
-    notes: "my favourite city so far",
-  };
-
-  const { cityName, date, notes } = currentCity;
+  const { cityName, date, notes, countryName } = currentCity;
 
   return (
-    <div>
-      <h3>
-        {cityName}, {notes} — {formatDate(date)}
-      </h3>
-      <p>
-        Lat: {lat} | Lng: {lng}
-      </p>
+    <div className="city-page">
+      <div className="city-card">
+        <div className="city-header">
+          <h2>{cityName}</h2>
+          <span className="country">{countryName}</span>
+        </div>
+
+        <div className="city-info">
+          <p className="label">Visited on</p>
+          <p className="value">{formatDate(date)}</p>
+
+          {notes && (
+            <>
+              <p className="label">Notes</p>
+              <p className="value notes">{notes}</p>
+            </>
+          )}
+        </div>
+
+        <button
+          className="btn-back"
+          onClick={() => navigate(-1)}
+        >
+          ← Back
+        </button>
+      </div>
     </div>
   );
 }

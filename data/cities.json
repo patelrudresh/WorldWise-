@@ -1,31 +1,26 @@
 {
-    "cities":[
-        {
-      "id": 1,
-      "cityName": "Delhi",
-      "countryName": "US",
-      "date": "(OCT 2025)",
-      "position": { "lat": 28.6139, "lng": 77.2090 }
+  "cities": [
+    {
+      "id": "e2f3",
+      "cityName": "Pushkar",
+      "country": "India",
+      "date": "2026-01-13T18:30:00.000Z",
+      "notes": "",
+      "position": {
+        "lat": 26.47148975966802,
+        "lng": 74.47811892442483
+      }
     },
     {
-      "id": 2,
-      "cityName": "London",
-      "countryName": "UK",
-      "date": "(JAN 2024)",
-      "position": { "lat": 51.5074, "lng": -0.1278 }
-    },
-         {
-            "id": 3,
-      "cityName": "Indore",
-      "countryName": "India",
-      "date":"(OCT 2025)",
-       "position": { "lat": 60.5074, "lng": -0.5978 }
-
-        },{
-            "id": 4,
-      "cityName": "bengaluru",
-      "countryName": "kanada",
-       "date":"(FEB 2021)"
-        }
-    ]
+      "id": "6792",
+      "cityName": "Laggala",
+      "country": "Sri Lanka",
+      "date": "2026-01-05T18:30:00.000Z",
+      "notes": "",
+      "position": {
+        "lat": 7.496618592856134,
+        "lng": 80.82609916667934
+      }
+    }
+  ]
 }
