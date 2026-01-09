@@ -20,7 +20,7 @@ function City() {
 
   useEffect(() => {
     getCity(id);
-  }, [id]);
+  }, [id,getCity]);
 
   if (isLoading) return <p className="loading">Loading...</p>;
   if (!currentCity) return <p>No city found</p>;

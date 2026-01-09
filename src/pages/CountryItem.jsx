@@ -2,7 +2,7 @@ import "../style/CityItem.css";
 
 function CountryItem({ country }) {
   return (
-    <li className="city-row-li">
+    <li className="city-row-li ">
       <div className="city-row">
         <span className="city-name">
           {country}
